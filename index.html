@@ -355,171 +355,48 @@
 
     <section class="section sec3 portfolio" id="portfolio">
 
+        <!-- filter  -->
+
         <div class="project-body">
             
-            <section id="project">
-                <div class="project-heading">
-                    <span>Let's See My Work</span>
-                    <h3>My Projects</h3>
-                </div>
-                <ul class="project-filter">
-                    <li class="list project-filter-active">C++</li>
-                    <li class="list">Web Development</li>
-                    <li class="list">Database</li>
-                    <li class="list">Peripherals</li>
-                    <li class="list">SE</li>
+            <h1>My Portfolio</h1> <br>
 
-                </ul>
-
-                <!-- filter  -->
-
-
-            </section>
+            <div class="filter">
+                    <div class="toggle-filter" onclick="toggleFilter()">
+                            <div class="toggle-icon"></div>
+                    </div>
+                    <div class="filter-buttons">
+                            <button onclick="filterProjects('')" class="gradient-bg filter-button">All</button>
+                            <button onclick="filterProjects('web')" class="gradient-bg filter-button">Web Development</button>
+                            <button onclick="filterProjects('cpp')" class="gradient-bg filter-button">C++</button>
+                            <button onclick="filterProjects('se')" class="gradient-bg se filter-button">Software Engineering</button>
+                            <button onclick="filterProjects('peripherals')" class="gradient-bg peripherals filter-button">Peripherals</button>
+                            <button onclick="filterProjects('db')" class="gradient-bg db filter-button">Database</button>
+                    </div>
+            </div>
+            
+            <div class="projects">
+                    <div class="project" data-category="web">
+                        <img src="images/about-us-image.jpg" alt="Background Image" class="project-background">
+                        <h2>Web Project 1</h2>
+                       
+                        <div class="project-content">
+                            <p>Description of the project...</p>
+                            <div class="project-links">
+                                <a href="https://github.com"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://youtube.com"><i class="fa-brands fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+            
+                   
+            
+                    <!-- Add more projects as needed -->
+            </div>
            
         </div>
 
-        <!-- <div class="main-title">
-            <h2>My <span>Portfolio</span><span class="bg-text">My Work</span></h2>
-        </div>
-        <p class="port-text">
-            Here is some of my work that I've done in various programming languages.
-        </p>
-        <div class="portfolios">
-            <div class="portfolio-item">
-                <div class="image">
-                    <img src="images/hero.jpg
-                    " alt="">
-                </div>
-                <div class="hover-items">
-                    <h3>Project Source</h3>
-                    <div class="icons">
-                        <a href="#" class="icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div class="image">
-                    <img src="img/port2.jpg" alt="">
-                </div>
-                <div class="hover-items">
-                    <h3>Project Source</h3>
-                    <div class="icons">
-                        <a href="#" class="icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div class="image">
-                    <img src="img/port3.jpg" alt="">
-                </div>
-                <div class="hover-items">
-                    <h3>Project Source</h3>
-                    <div class="icons">
-                        <a href="#" class="icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div class="image">
-                    <img src="img/port4.jpg" alt="">
-                </div>
-                <div class="hover-items">
-                    <h3>Project Source</h3>
-                    <div class="icons">
-                        <a href="#" class="icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div class="image">
-                    <img src="img/port5.jpg" alt="">
-                </div>
-                <div class="hover-items">
-                    <h3>Project Source</h3>
-                    <div class="icons">
-                        <a href="#" class="icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div class="image">
-                    <img src="img/port2.jpg" alt="">
-                </div>
-                <div class="hover-items">
-                    <h3>Project Source</h3>
-                    <div class="icons">
-                        <a href="#" class="icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div class="image">
-                    <img src="img/port7.jpg" alt="">
-                </div>
-                <div class="hover-items">     
-                    <h3>Project Source</h3>
-                    <div class="icons">
-                        <a href="#" class="icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="icon">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+       
 
     </section>
     <section class="section sec4 blogs" id="blogs">

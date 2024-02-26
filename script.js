@@ -113,5 +113,23 @@ carousel.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragStop);
 
 
-// achivement 
+// project filter
+function filterProjects(category) {
+    var projects = document.getElementsByClassName('project');
+    for (var i = 0; i < projects.length; i++) {
+            var project = projects[i];
+            if (category === '' || project.getAttribute('data-category') === category) {
+                    project.classList.remove('hidden');
+                    project.classList.add('fade-in');
+            } else {
+                    project.classList.add('hidden');
+                    project.classList.remove('fade-in');
+            }
+    }
+}
+
+function toggleFilter() {
+    var toggleFilter = document.querySelector('.toggle-filter');
+    toggleFilter.classList.toggle('open');
+}
 
