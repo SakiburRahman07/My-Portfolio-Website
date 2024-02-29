@@ -70,11 +70,20 @@
       </aside>
 
 
-      <div class="about-me-content">
+      <div id="about-me-content">
          
-        <p id="about-me-description"> Yoo bro </p>
+        
+        <p id="mozila">dfdfddgdg </p>
 
       </div>
+
+
+
+
+
+
+
+
 
 
 

@@ -37,23 +37,25 @@ document.addEventListener("DOMContentLoaded", function() {
 //     }
 // });
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("about-me-btn").addEventListener("click", function(){
-        console.log("Button clicked"); // Debugging line
-        selectItem("about-me-btn");
-        let data = "yo yo pops here";
+// document.addEventListener("DOMContentLoaded", function() {
+//     document.getElementById("about-me-btn").addEventListener("click", function(){
+//         console.log("Button clicked"); // Debugging line
+//         selectItem("about-me-btn");
+//         let data = "yo yo pops here";
 
-        let contentElement = document.querySelector(".about-me-content");
-        console.log(contentElement); // Debugging line
-        if(contentElement) {
-            document.getElementById("about-me-description").innerHTML = data;
-            contentElement.style.display = "block"; // Make the div visible
-            console.log("Element should now be visible"); // Debugging line
-        } else {
-            console.log("Element not found"); // Debugging line
-        }
-    });
-});
+//         let contentElement = document.querySelector(".about-me-content");
+//         console.log(contentElement); // Debugging line
+//         if(contentElement) {
+//            // document.getElementById("about-me-description").innerHTML = data;
+//             contentElement.style.display = "block"; // Make the div visible
+//             console.log("Element should now be visible"); // Debugging line
+//         } else {
+//             console.log("Element not found"); // Debugging line
+//         }
+//     });
+// });
+
+
 
 
 function selectItem(id){
