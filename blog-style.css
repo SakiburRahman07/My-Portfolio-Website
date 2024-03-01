@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,400&display=swap');
+
+.blog-body
+{
+ 
+	height: 100vh;
+}
+
+
+
+
 #blogs{
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -6,6 +16,19 @@
         scroll-behavior: smooth;
         scroll-padding-top: 2rem;
         box-sizing: border-box;
+      
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
     }
 
     /* root values */
@@ -13,12 +36,11 @@
         --container-color: --color-primary;
         --second-color: rgba(77, 228, 255);
         --text-color: #172317;
-        --bg-color: #fff;
+        --bg-color: white;
     }
 
     ::selection{
         color: var(--bg-color);
-        background: var(--second-color);
     }
 
     #blogs a{
@@ -57,7 +79,6 @@
     }
 
     #blogs header.shadow{
-        background: var(--bg-color);
         box-shadow: 0 1px 4px hsl(0 4% 14% / 10%);
         transition: .5s;
     }
@@ -159,7 +180,6 @@
         display: inline-block;
         margin-top: 30px;
         padding: 10px 30px;
-        background: #fff;
         border: .8px solid #111;
         color: #333;
         text-decoration: none;
@@ -194,6 +214,8 @@
     }
 
     #blogs .post{
+        margin-top: 10px;
+        
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, auto));
         justify-content: center;
@@ -201,7 +223,10 @@
     }
 
     #blogs .post-box {
-        background: var(--bg-color);
+        	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+      
         box-shadow: 0 4px 14px hsl(35deg 25% 15% / 10%);
         padding: 15px;
         border-radius: 0.5rem;
@@ -584,4 +609,13 @@
         #blogs footer .footer-container .contactBx{
             width: 100%;
         }
+    }
+
+
+    #blogs html
+    {
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        height: 100vh;
     }

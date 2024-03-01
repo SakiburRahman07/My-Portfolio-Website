@@ -1,3 +1,13 @@
+let c = 45;
+
+function draw() {
+  document.documentElement.style.setProperty('--direction', c++ + 'deg');
+  requestAnimationFrame(draw);
+}
+
+
+
+requestAnimationFrame(draw);
 const sections = document.querySelectorAll('.section');
 const sectBtns = document.querySelectorAll('.controlls');
 const sectBtn = document.querySelectorAll('.control');
@@ -47,6 +57,9 @@ function PageTransitions()
 }
 
 PageTransitions();
+
+
+
 
 let btns = document.querySelectorAll('.btn');
 btns.forEach(btn => {
