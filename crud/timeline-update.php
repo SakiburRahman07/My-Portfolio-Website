@@ -51,7 +51,7 @@
         <div class="form-group">
             <label for="">Title: </label>
             <input type="hidden" name="timeline_id"  value="<?php echo $row['timeline_id']; ?>" />
-            <input type="text" name="name" value="<?php echo $row['title']; ?>" />
+            <input type="text" name="title" value="<?php echo $row['title']; ?>" />
         </div>
         <div class="form-group">
             <label>Time Period : </label>
@@ -61,6 +61,20 @@
             <label>Description : </label>
             <input type="text" name="description" value="<?php echo $row['description']; ?>" />
         </div>
+
+        <div class="form-group">
+            <label>Class : </label>
+            <select name="class">
+                <?php
+                if($row['class'] == 'left-container'){
+                    echo "<option value='left-container' selected>Left Container</option>";
+                    echo "<option value='right-container'>Right Container</option>";
+                }else{
+                    echo "<option value='left-container'>Left Container</option>";
+                    echo "<option value='right-container' selected>Right Container</option>";
+                }
+                ?>
+            </select>
        
         
     <input class="submit" type="submit" value="Update"  />

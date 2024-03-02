@@ -19,6 +19,13 @@
                 <label>Description : </label>
                 <textarea name="description"></textarea>
             </div>
+
+            <div class="form-group bigform">
+                <label>Class : </label>
+                <select name="class">
+                    <option value="left-container">Left Container</option>
+                    <option value="right-container">Right Container</option>
+                </select>
             
             
             <input class="submit" type="submit" value="Save" />

@@ -24,6 +24,7 @@
           <th>Title</th>
           <th>Time Period</th>
           <th>Description</th>
+          <th>Class</th>
          
         </tr>
       </thead>
@@ -32,6 +33,7 @@
             $title = $row["title"];
             $name = $row["date"];
             $description = $row["description"];
+            $class = $row["class"];
          
     ?>
     <tbody>
@@ -39,6 +41,7 @@
           <td><?php echo $title ?></td>
           <td><?php echo $name ?></td>
           <td><?php echo $description ?></td>
+          <td><?php echo $class?></td>
            
 
          

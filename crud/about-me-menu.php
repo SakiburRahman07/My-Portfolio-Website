@@ -9,8 +9,6 @@
                 <li>
                     <a href="timeline.php">Timeline</a>
                 </li>
-                <li>
-                    <a href="delete.php">Delete</a>
-                </li>
+              
             </ul>
         </div>

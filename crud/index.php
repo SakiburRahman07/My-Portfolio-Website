@@ -1,52 +1,44 @@
 <?php
 include 'header.php';
+
+// Start the session
+session_start();
+
+
+
+if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
+    // Redirect to login page or handle the situation accordingly
+    header("location: login.php");
+    exit(); // Make sure to exit after a header redirection
+}
+
+if (isset($_POST['logout'])) {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+
+    // Redirect to the login page after logout
+    header("location: login.php");
+    exit(); // Make sure to exit after a header redirection
+}
 ?>
-<div id="main-content">
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome Page</title>
+</head>
+<body>
 
-  <h1>Under Construction</h1>
-    <!-- <h2>All Records</h2>
-    <?php
-      include 'config.php';
+    <div id="main-content">
 
-      $sql = "SELECT * FROM student JOIN studentclass WHERE student.sclass = studentclass.cid";
-      $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
+        <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
+        <p>This is your welcome page.</p>
 
-      if(mysqli_num_rows($result) > 0)  {
-    ?>
-    <table cellpadding="7px">
-        <thead>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Class</th>
-        <th>Phone</th>
-        <th>Action</th>
-        </thead>
-        <tbody>
-          <?php
-            while($row = mysqli_fetch_assoc($result)){
-          ?>
-            <tr>
-                <td><?php echo $row['sid']; ?></td>
-                <td><?php echo $row['sname']; ?></td>
-                <td><?php echo $row['saddress']; ?></td>
-                <td><?php echo $row['cname']; ?></td>
-                <td><?php echo $row['sphone']; ?></td>
-                <td>
-                    <a href='edit.php?id=<?php echo $row['sid']; ?>'>Edit</a>
-                    <a href='delete-inline.php?id=<?php echo $row['sid']; ?>'>Delete</a>
-                </td>
-            </tr>
-          <?php } ?>
-        </tbody>
-    </table>
-  <?php }else{
-    echo "<h2>No Record Found</h2>";
-  }
-  mysqli_close($conn);
-  ?> -->
-</div>
-</div>
+        <!-- Logout button -->
+        <form action="" method="post">
+            <button type="submit" name="logout">Log Out</button>
+        </form>
+
+    </div>
 </body>
 </html>

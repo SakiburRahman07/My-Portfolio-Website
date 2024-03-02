@@ -2,7 +2,7 @@ body{
     font:16px arial;
     margin: 0;
     padding: 0;
-    background: #d1d1d1;
+    background: linear-gradient(to right, #d1d1d1, #ffd6ff, #e7c6ff, #c8b6ff, #b8c0ff, #bbd0ff, #ffffff);
 }
 
 #wrapper{
@@ -54,7 +54,7 @@ body{
 }
 
 #main-content{
-     padding: 25px;
+    padding: 0px;
     min-height: 400px;
 }
 #main-content h2{

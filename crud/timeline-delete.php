@@ -61,6 +61,20 @@
             <label>Description : </label>
             <input type="text" name="description" value="<?php echo $row['description']; ?>" />
         </div>
+
+        <div class="form-group">
+            <label>Class : </label>
+            <select name="class">
+                <?php
+                if($row['class'] == 'left-container'){
+                    echo "<option value='left-container' selected>Left Container</option>";
+                    echo "<option value='right-container'>Right Container</option>";
+                }else{
+                    echo "<option value='left-container'>Left Container</option>";
+                    echo "<option value='right-container' selected>Right Container</option>";
+                }
+                ?>
+            </select>
       
         
     <input class="submit" type="submit" value="DELETE"  />

@@ -82,6 +82,16 @@
               <span class="btn-text">Download CV</span>
               <span class="btn-icon"><i class="fas fa-download"></i></span>
             </a>
+
+            <form action="/My portfolio website 2/crud/login.php" method="post">
+            <div id="admin-btn">
+              <button type="submit" action="crud/contact-me-form-recerive.php" >
+                <span class="btn-text">ADMIN PANEL</span>
+                <span class="btn-icon"><i class="fa-solid fa-user"></i></span>
+              </button>
+            </div>
+          </form>
+
           </div>
         </div>
       </div>
@@ -212,42 +222,7 @@
                     </div>
                   </div>
                   <?php } ?>
-                  <!-- <div class="card">
-                    <div class="content">
-                      <div class="img">
-                        <img src="images/kuetLogo.png" alt="" />
-                      </div>
-                      <div class="details">
-                        <div class="name">Jamuna College</div>
-                        <br />
-                        <div class="job">Higher Secondary Education</div>
-                      </div>
-                      <div class="media-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="content">
-                      <div class="img">
-                        <img src="images/kuetLogo.png" alt="" />
-                      </div>
-                      <div class="details">
-                        <div class="name">Mohera Ananda High School</div>
-                        <br />
-                        <div class="job">Secondary Education</div>
-                      </div>
-                      <div class="media-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                      </div>
-                    </div>
-                  </div> -->
+                 
                 </div>
                 <div class="cards">
                   <?php for($i=3; $i<mysqli_num_rows($result); $i++) { 
@@ -291,18 +266,32 @@
               <h2>TIMELINE</h2>
             </div>
             <br />
+                
+            <?php
+                $conn = mysqli_connect("localhost:3307", "root", "", "portfolio") or die("Connection Failed"); 
+                $sql = "SELECT * from timeline";
+                $result = mysqli_query($conn, $sql) or die("Query Failed");
+                if(mysqli_num_rows($result) >
+            0){ ?>
+
+                    
+
             <div class="timeline">
-              <div class="timeline-container left-container">
+            <?php
+                    while($row = mysqli_fetch_assoc($result)){
+                   
+                    ?>
+              <div class="timeline-container <?php echo $row['class']?>" >
                 <img src="images/kuetLogo.png" alt="kuet" />
                 <div class="text-box">
-                  <h2>Khulna University of Engineering & Technology</h2>
-                  <small>2021-current</small>
-                  <p>Bsc(Engg) in Computer Science & Engineering</p>
-                  <span class="left-container-arrow"></span>
+                  <h2><?php echo $row['title'] ?></h2>
+                  <small><?php echo $row['date'] ?></small>
+                  <p><?php echo $row['description'] ?></p>
+                  <span class="<?php echo $row['class']?>-arrow"></span>
                 </div>
               </div>
-
-              <div class="timeline-container right-container">
+                      <?php }  ?>
+              <!-- <div class="timeline-container right-container">
                 <img src="images/kuetLogo.png" alt="kuet" />
                 <div class="text-box">
                   <h2>Jamuna College</h2>
@@ -330,8 +319,9 @@
                   <p>Primary Education</p>
                   <span class="right-container-arrow"></span>
                 </div>
-              </div>
+              </div> -->
             </div>
+            <?php } ?>
           </div>
 
           <!-- skill section  -->
@@ -922,17 +912,17 @@
               </div>
             </div>
             <div class="right-contact">
-              <form action="" class="contact-form">
+              <form action="crud/contact-me-form-recerive.php" method="POST" class="contact-form">
                 <div class="input-control i-c-2">
-                  <input type="text" required placeholder="YOUR NAME" />
-                  <input type="email" required placeholder="YOUR EMAIL" />
+                  <input type="text" name="name" required placeholder="YOUR NAME" />
+                  <input type="email" name="email" required placeholder="YOUR EMAIL" />
                 </div>
                 <div class="input-control">
-                  <input type="text" required placeholder="ENTER SUBJECT" />
+                  <input type="text" name="subject" required placeholder="ENTER SUBJECT" />
                 </div>
                 <div class="input-control">
                   <textarea
-                    name=""
+                    name="messege"
                     id=""
                     cols="15"
                     rows="8"
@@ -940,16 +930,22 @@
                   ></textarea>
                 </div>
                 <div class="submit-btn">
-                  <a href="resume.pdf" class="main-btn">
-                    <span class="btn-text">Download CV</span>
+                  <button type="submit" action="crud/contact-me-form-recerive.php"  class="main-btn">
+                    <span class="btn-text">SUBMIT</span>
                     <span class="btn-icon"
-                      ><i class="fas fa-download"></i
-                    ></span>
-                  </a>
+                      ><i class="fa-solid fa-envelope-circle-check"></i></span>
+                  </button>
                 </div>
               </form>
             </div>
           </div>
+
+          
+
+
+
+
+
         </div>
       </section>
     </main>

@@ -21,10 +21,8 @@
                     <a href="about-me.php">About Me</a>
                 </li>
                 <li>
-                    <a href="update.php">Update</a>
+                    <a href="contact-me.php">Contact</a>
                 </li>
-                <li>
-                    <a href="delete.php">Delete</a>
-                </li>
+               
             </ul>
         </div>
