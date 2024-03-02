@@ -70,7 +70,6 @@ a{
 }
 
 header{
-    height: 100vh;
     color: var(--color-white);
     overflow: hidden;   
 }
@@ -217,15 +216,15 @@ header{
 .header-content{
     display: grid;
     grid-template-columns: repeat(2 , 1fr);
-    height: 100%;
+    height: fit-content;
     .left-header{
         display: flex;
         align-items: center;
+        margin-left: 4rem;
         position: relative;
         .h-shape{
             transition: all .4s ease-in-out;
             width: 50%;
-            height: 100%;
             background-color:var(--color-secondary) ;
             position: absolute;
             left: 0;
@@ -236,9 +235,11 @@ header{
         }
         .image{
             border-radius: var(--br-sm-2);
-            height: 90%;
-            width: 68%;
-            margin-left: 4rem;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            height: 625px;
+            width: 60%;
+           
             background-color: var(--color-black);
             transition: all .4s ease-in-out;
             img {
@@ -267,7 +268,7 @@ header{
         padding-right: 18rem;
         .name{
             margin-bottom: 1rem;
-            font-size: 3rem;
+            font-size: 2.5rem;
             span{
                 color: var(--color-secondary);
             }
@@ -289,9 +290,9 @@ header{
     box-sizing: content-box;
     background-color: white;
     color: blue;
-    font-size: 40px;
-    height: 60px;
-    width: 450px;
+    font-size: 30px;
+    height: 40px;
+    width: 340px;
     padding: 20px 20px;
     border-radius: 8px;
     display: flex;
@@ -303,7 +304,7 @@ header{
         
         animation: spin_words 6s infinite;
         color: red;
-        font-size: 40px;
+        font-size: 30px;
     }
   
     
@@ -398,7 +399,7 @@ header{
     
     h2{
         text-align: center;
-        position: relative;
+        /* position: relative;
         text-transform: uppercase;
         font-size: 64px;
          font-weight:700 ;
@@ -415,8 +416,64 @@ header{
             transform: translate(-50% , -50%);
             font-weight: 800;
             font-size: 80px;
-         }
+         } */
     }
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap');
+
+.textandimage {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 768px) {
+    .textandimage {
+        flex-direction: column;
+        align-items: center;
+        .read-more-container{
+            width: 100%;
+        }
+    }
+}
+.read-more-container{
+    display: flex;
+    flex-direction: column;
+    color: #111;
+    gap: 1rem;
+    width: 50%;
+}
+
+.container-readmode{
+    padding: 2rem;
+    border-radius: 2px;
+    line-height: 1.4rem;
+    box-shadow: 0 0 1rem rgba(0,0,0,.1);
+}
+
+.read-more-btn{
+    border: 1px solid #b40000;
+    color: #b60b0b;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.read-more-btn:hover{
+    background-color: #b40000;
+    color: white;
+}
+
+.read-more-text{
+    display: none;
+}
+
+.read-more-text--show{
+    display: inline;
 }
 
     .about-container{
@@ -1080,6 +1137,11 @@ input[type="radio"] {
     align-items: center;
     min-height: 70vh;
     
+    
+  }
+
+  .skill-container{
+    margin-bottom: 3rem;
   }
   
   .personalskill-container {
@@ -1164,6 +1226,8 @@ input[type="radio"] {
 
    /* gallery */
    #gallery-background .gallery-body{
+    
+    
     background: #f2e9ff;
 }
 
@@ -2371,7 +2435,7 @@ body{
 .wrapper-animation {
     height: 100%;
     width: 100%;
-    background: linear-gradient(180deg, #04fafd, 5%, #119dff, 50%, #030423);
+    /* background: linear-gradient(180deg, #04fafd, 5%, #119dff, 50%, #030423); */
     position: absolute;
     z-index: -1;
 }
@@ -2481,4 +2545,235 @@ body{
 
 
 
+    
+@media screen and (max-width: 1200px) {
+   
+  
+    .header-content {
+      grid-template-columns: repeat(1, 1fr);
+      align-items: center;
+      padding-bottom: 6rem;
+    }
 
+    .header-content .left-header {
+      grid-row: 2;
+      margin-left: 1rem;
+      padding-left: 0rem !important;
+      width: 90%;
+      align-items: center;
+      justify-content: space-evenly;
+      margin: 0 auto;
+    }
+  
+    .left-header .h-shape {
+      display: none;
+    }
+  
+    .right-header {
+      grid-row: 1;
+      padding-right: 0rem !important;
+      width: 90%;
+      align-items: center;
+      justify-content: space-evenly;
+      margin: 0 auto;
+    }
+
+    #salam
+    {
+        
+        font-size: 1rem;
+    }
+    .right-header .name {
+      font-size: 2rem !important;
+      text-align: center;
+      padding-top: 1rem;
+    }
+  
+    .header-content .left-header .image {
+   
+      width: 90%;
+    }
+
+    #home-des{
+        margin-top: 1rem;
+        font-size: 1rem;
+        color: wheat;
+        margin-bottom: 1rem;
+        
+        }
+
+        .btn-con{
+            align-items: center;
+            font-size: 0.7rem;
+        }
+
+        .text-animation{
+            box-sizing: content-box;
+            background-color: white;
+            color: blue;
+            font-size: 20px;
+            height: 30px;
+            width: 230px;
+            padding: 20px 20px;
+            border-radius: 8px;
+            display: flex;
+            box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+            span{
+                display: block;
+                height: 100%;
+                padding-left: 10px;
+                
+                animation: spin_words 6s infinite;
+                color: red;
+                font-size: 20px;
+            }
+            
+            
+            }
+            .words{
+            overflow: hidden;
+            }
+
+
+            .logo-sakib {
+                width: 100px;
+                height: 100px;
+                
+                margin-top: 2rem;
+                border-radius: 50%;
+                background-color: var(--color-secondary);
+                top: 0;
+                left: 0;
+                z-index: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 0rem;
+                img {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    animation: rotate 1.2s linear infinite; 
+                    transform-origin: center; 
+                    opacity: 0.8; 
+                }
+                }
+
+    
+
+}
+
+
+
+
+
+/*
+.heading-text-effect
+{
+    position: relative;
+    font-size: 7vw;
+    color: #252839;
+    -webkit-text-stroke: 0.3px #383d52;
+    -moz-text-stroke: 0.3px #383d52;
+    -ms-text-stroke: 0.3px #383d52;
+    text-transform: uppercase;
+
+}
+
+.heading-text-effect::before
+{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    -webkit-text-stroke: 0px #383d52;
+    -moz-text-stroke: 0px #383d52;
+    -ms-text-stroke: 0px #383d52;
+    border-right: 2px solid #01fe87 ;
+    overflow: hidden;
+    animation: animate-text 6s linear infinite;
+}
+
+@keyframes animate-text {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    70%, 90% {
+        width: 100%;
+    }
+} */
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+
+
+.heading-text-effect{
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    text-align: center; /* Added property */
+    z-index: 10;
+    text-transform: uppercase;
+}
+
+
+
+.heading-text-effect h2 {
+	color: #fff;
+	font-size: 5vw;
+	/* transform: translate(-50%, -50%); */
+}
+
+#second-h2{
+    position: absolute;
+}
+
+.heading-text-effect h2:nth-child(1) {
+	color: transparent;
+	-webkit-text-stroke: 2px #003d21;
+}
+
+.heading-text-effect h2:nth-child(2) {
+	color: #003d21;
+	animation: animate-water 4s ease-in-out infinite;
+}
+
+@keyframes animate-water {
+	0%,
+	100% {
+		clip-path: polygon(
+			0% 45%,
+			16% 44%,
+			33% 50%,
+			54% 60%,
+			70% 61%,
+			84% 59%,
+			100% 52%,
+			100% 100%,
+			0% 100%
+		);
+	}
+
+	50% {
+		clip-path: polygon(
+			0% 60%,
+			15% 65%,
+			34% 66%,
+			51% 62%,
+			67% 50%,
+			84% 45%,
+			100% 46%,
+			100% 100%,
+			0% 100%
+		);
+	}
+}
+
+
+#travel{
+    margin-top: 2rem;
+}
