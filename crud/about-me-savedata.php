@@ -1,7 +1,10 @@
 <?php
 
- $part1 = $_POST['part1'];
- $part2 = $_POST['part2'];
+ $part1 = $_POST["part1"];
+ $part2 = $_POST["part2"];
+
+//  echo $part1;
+//  echo $part2;
 
 
 $conn = mysqli_connect("localhost:3307","root","","portfolio") or die("Connection Failed");

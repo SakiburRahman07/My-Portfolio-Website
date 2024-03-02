@@ -108,18 +108,30 @@
             <div class="textandimage">
               <div class="read-more-container id="readmore">
 
+                <?php
+                $conn = mysqli_connect("localhost:3307", "root", "", "portfolio") or die("Connection Failed"); 
+                $sql = "SELECT about_me_description,about_me_description_2 from about_me";
+                $result = mysqli_query($conn, $sql) or die("Query Failed");
+                if(mysqli_num_rows($result) >
+            0){ ?>
+
+<?php
+                    while($row = mysqli_fetch_assoc($result)){
+                   
+                    ?>
+
                 <div class="container-readmode">
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, facere? Quae distinctio reprehenderit soluta fugiat, alias, doloremque similique tenetur magni voluptate a, perspiciatis quaerat! Necessitatibus velit consectetur expedita consequatur assumenda!
+                    <?php echo $row['about_me_description']; ?>
                         <span class="read-more-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quasi quaerat, amet explicabo magnam, nulla porro dolorem itaque
+                        <?php echo $row['about_me_description_2']; ?>
                         </span>
                     </p>
                     <br>
                     <span class="read-more-btn">Read More...</span>
                 </div>
 
-               
+                <?php } } ?>
         
                 
         
@@ -131,23 +143,15 @@
             </div>
             <!-- <div class="content">
               <div class="article">
-                <?php
-                    $conn = mysqli_connect("localhost:3307", "root", "", "portfolio") or die("Connection Failed"); 
-                    $sql = "SELECT about_me_description,about_me_description_2 from about_me";
-                    $result = mysqli_query($conn, $sql) or die("Query Failed");
-                    if(mysqli_num_rows($result) >
-                0){ ?>
+          
 
-                <?php
-                    while($row = mysqli_fetch_assoc($result)){
-                   
-                    ?>
-                <h3><?php echo $row['about_me_description']; ?></h3>
-                <p><?php echo $row['about_me_description_2']; ?></p>
+             
+                <h3></h3>
+                <p></p>
                 <div class="button">
                   <a href="">Read More</a>
                 </div>
-                <?php } } ?>
+               
               </div>
             </div> -->
            
@@ -160,6 +164,14 @@
 
           <!-- education section  -->
 
+          <?php
+                $conn = mysqli_connect("localhost:3307", "root", "", "portfolio") or die("Connection Failed"); 
+                $sql = "SELECT * from education";
+                $result = mysqli_query($conn, $sql) or die("Query Failed");
+                if(mysqli_num_rows($result) >
+            0){ ?>
+
+
           <div class="educationbody">
             <div class="container">
               <div class="heading-text-effect">
@@ -171,29 +183,36 @@
               <input type="radio" name="dot" id="two" />
               <div class="main-card">
                 <div class="cards">
+                  <?php for($i=0; $i<3; $i++) { 
+                    $rows=mysqli_fetch_assoc($result);
+                    ?>
                   <div class="card">
                     <div class="content">
                       <div class="img">
                         <img src="images/kuetLogo.png" alt="" />
                       </div>
                       <div class="details">
+
+
+                      
                         <div class="name">
-                          Khulna University of Engineering & Technology
+                          <?php echo $rows['name']; ?>
                         </div>
                         <br />
                         <div class="job">
-                          BSc(Engg) in Computer Science & Engineering
+                          <?php echo $rows['title']; ?>
                         </div>
                       </div>
                       <div class="media-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="<?php echo $rows['web']; ?>"><i class="fab fa-facebook-f"></i></a>
+                        <a href="<?php echo $rows['fb']; ?>"><i class="fab fa-twitter"></i></a>
+                        <a href="<?php echo $rows['twitter']; ?>"><i class="fab fa-instagram"></i></a>
+                        <a href="<?php echo $rows['youtube']; ?>"><i class="fab fa-youtube"></i></a>
                       </div>
                     </div>
                   </div>
-                  <div class="card">
+                  <?php } ?>
+                  <!-- <div class="card">
                     <div class="content">
                       <div class="img">
                         <img src="images/kuetLogo.png" alt="" />
@@ -228,28 +247,32 @@
                         <a href="#"><i class="fab fa-youtube"></i></a>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="cards">
+                  <?php for($i=3; $i<mysqli_num_rows($result); $i++) { 
+                    $rows=mysqli_fetch_assoc($result);
+                    ?>
                   <div class="card">
                     <div class="content">
                       <div class="img">
                         <img src="images/kuetLogo.png" alt="" />
                       </div>
                       <div class="details">
-                        <div class="name">7 no. Gobra Govt Primary School</div>
+                        <div class="name"> <?php echo $rows['name']; ?></div>
                         <br />
-                        <div class="job">Primary Education</div>
+                        <div class="job"> <?php echo $rows['title']; ?></div>
                       </div>
                       <div class="media-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href=" <?php echo $rows['web']; ?>"><i class="fab fa-facebook-f"></i></a>
+                        <a href=" <?php echo $rows['fb']; ?>"><i class="fab fa-twitter"></i></a>
+                        <a href=" <?php echo $rows['twitter']; ?>"><i class="fab fa-instagram"></i></a>
+                        <a href=" <?php echo $rows['youtube']; ?>"><i class="fab fa-youtube"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
+                <?php } }?>
               </div>
               <div class="button">
                 <label for="one" class="active one"></label>

@@ -26,6 +26,21 @@ parentContainer.addEventListener('click', event=>{
 })
 
 
+// //! Scroll Reveal 
+// ScrollReveal({ 
+//     reset: true,
+//     distance: '80px',
+//     duration: 2000,
+//     delay: 200
+// });
+
+// ScrollReveal().reveal('header-content', { origin: 'top' });
+// // ScrollReveal().reveal('.sec2, .services-container, .portfolio-box, .contact-form', { origin: 'bottom' });
+// // ScrollReveal().reveal('.sec3, .heading', { origin: 'top' });
+// // ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+
+
+
 
 requestAnimationFrame(draw);
 const sections = document.querySelectorAll('.section');
