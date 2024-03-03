@@ -9,6 +9,8 @@
   --color-primary: #191d2b;
   --color-secondary: #27AE60;
   --color-white: #FFFFFF;
+  --color-bg1: #e3d5ca;
+  --color-bg2:#4a4e69;
   --color-black: #000;
   --color-grey0: #f8f8f8;
   --color-grey-1: #dbe1e8;
@@ -24,7 +26,9 @@
 }
 
 .light-mode {
-  --color-primary: #FFFFFF;
+    --color-bg1: #6c3;
+    --color-bg2:#09f;
+  --color-primary: #8ecae6;
   --color-secondary: #F56692;
   --color-white: #454e56;
   --color-black: #000;
@@ -449,7 +453,9 @@ header{
 }
 
 .container-readmode{
+    color: white;
     padding: 2rem;
+    font-family: 'Lato', sans-serif;
     border-radius: 2px;
     line-height: 1.4rem;
     box-shadow: 0 0 1rem rgba(0,0,0,.1);
@@ -1133,7 +1139,6 @@ input[type="radio"] {
   /* personal skill  */
 
   .personalskill {
-    width: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1152,12 +1157,12 @@ input[type="radio"] {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 2vw;
   }
   .personalskill-container .progress {
     position: relative;
     width: 150px;
-    height: 150px;
+    height:150px;
     border-radius: 50%;
     text-align: center;
     color: #fff;
@@ -1169,18 +1174,18 @@ input[type="radio"] {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.5em;
+    font-size: 16px;
     z-index: 1;
     font-weight: 500;
   }
   
   .personalskill-container .progress h3 span {
-    font-size: 0.6em;
+    font-size: 10px;
     font-weight: 400;
   }
   .personalskill-container .progress h4 {
     position: absolute;
-    font-size: 0.73em;
+    font-size: 10px;
     top: 62%;
     left: 50%;
     transform: translateX(-50%);
@@ -1489,6 +1494,7 @@ input[type="radio"] {
     background-color: #FFC107;
 }
 .project-body{
+    margin-top: 50px;
 margin-bottom: 50px;    
 }
 .projects {
@@ -1797,7 +1803,7 @@ h1 {
 .project p {
     margin-bottom: 20px;
     font-size: 16px;
-    color: #666;
+    color: white;
 }
 
 .project-links {
@@ -2408,7 +2414,7 @@ body{
 
   .bg {
     animation:slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    background-image: linear-gradient(-60deg, var(--color-bg1) 50%, var(--color-bg2) 50%);
     bottom:0;
     left:-50%;
     opacity:.5;
@@ -2691,43 +2697,7 @@ body{
 
 
 
-/*
-.heading-text-effect
-{
-    position: relative;
-    font-size: 7vw;
-    color: #252839;
-    -webkit-text-stroke: 0.3px #383d52;
-    -moz-text-stroke: 0.3px #383d52;
-    -ms-text-stroke: 0.3px #383d52;
-    text-transform: uppercase;
 
-}
-
-.heading-text-effect::before
-{
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    -webkit-text-stroke: 0px #383d52;
-    -moz-text-stroke: 0px #383d52;
-    -ms-text-stroke: 0px #383d52;
-    border-right: 2px solid #01fe87 ;
-    overflow: hidden;
-    animation: animate-text 6s linear infinite;
-}
-
-@keyframes animate-text {
-    0%, 10%, 100% {
-        width: 0;
-    }
-    70%, 90% {
-        width: 100%;
-    }
-} */
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 
@@ -2750,6 +2720,13 @@ body{
 	font-size: 5vw;
 	/* transform: translate(-50%, -50%); */
 }
+
+@media screen and (max-width: 768px) {
+    .heading-text-effect h2 {
+        color: #fff;
+        font-size: 10vw;
+        /* transform: translate(-50%, -50%); */
+    }}
 
 #second-h2{
     position: absolute;

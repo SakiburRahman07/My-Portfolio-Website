@@ -28,18 +28,7 @@ parentContainer.addEventListener('click', event=>{
 
 
 
-// //! Scroll Reveal 
-// ScrollReveal({ 
-//     reset: true,
-//     distance: '80px',
-//     duration: 2000,
-//     delay: 200
-// });
 
-// ScrollReveal().reveal('header-content', { origin: 'top' });
-// // ScrollReveal().reveal('.sec2, .services-container, .portfolio-box, .contact-form', { origin: 'bottom' });
-// // ScrollReveal().reveal('.sec3, .heading', { origin: 'top' });
-// // ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 
 
@@ -96,7 +85,7 @@ function PageTransitions()
 PageTransitions();
 
 
-
+//magnetic button
 
 let btns = document.querySelectorAll('.btn');
 btns.forEach(btn => {
@@ -183,20 +172,5 @@ function toggleFilter() {
     toggleFilter.classList.toggle('open');
 }
 
-// document.addEventListener('DOMContentLoaded', (event) => {
-//     const hiddenElements = document.querySelectorAll('.hidden');
 
-//     const observer = new IntersectionObserver((entries) => {
-//         entries.forEach((entry) => {
-//             console.log(entry);
-//             if(entry.isIntersecting) {
-//                 entry.target.classList.add('show');
-//             } else {
-//                 entry.target.classList.remove('show');
-//             }
-//         });
-//     });
-
-//     hiddenElements.forEach((el) => observer.observe(el));
-// });
 

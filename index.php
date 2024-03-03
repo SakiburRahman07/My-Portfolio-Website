@@ -341,14 +341,14 @@
               <div class="skill">
                 <div class="skill-name">CSS</div>
                 <div class="skill-bar">
-                  <div class="skill-per" per="70%" style="max-width: 70%"></div>
+                  <div class="skill-per" per="90%" style="max-width: 90%"></div>
                 </div>
               </div>
 
               <div class="skill">
                 <div class="skill-name">Javascript</div>
                 <div class="skill-bar">
-                  <div class="skill-per" per="60%" style="max-width: 60%"></div>
+                  <div class="skill-per" per="85%" style="max-width: 85%"></div>
                 </div>
               </div>
               <div class="skill">
@@ -361,27 +361,27 @@
               <div class="skill">
                 <div class="skill-name">ASP.NET</div>
                 <div class="skill-bar">
-                  <div class="skill-per" per="70%" style="max-width: 70%"></div>
+                  <div class="skill-per" per="85%" style="max-width: 85%"></div>
                 </div>
               </div>
 
               <div class="skill">
                 <div class="skill-name">Java</div>
                 <div class="skill-bar">
-                  <div class="skill-per" per="60%" style="max-width: 60%"></div>
+                  <div class="skill-per" per="92%" style="max-width: 92%"></div>
                 </div>
               </div>
               <div class="skill">
                 <div class="skill-name">C++</div>
                 <div class="skill-bar">
-                  <div class="skill-per" per="70%" style="max-width: 70%"></div>
+                  <div class="skill-per" per="95%" style="max-width: 95%"></div>
                 </div>
               </div>
 
               <div class="skill">
                 <div class="skill-name">C</div>
                 <div class="skill-bar">
-                  <div class="skill-per" per="60%" style="max-width: 60%"></div>
+                  <div class="skill-per" per="95%" style="max-width: 95%"></div>
                 </div>
               </div>
             </div>
@@ -392,16 +392,16 @@
                   <h3>85<span>%</span></h3>
                   <h4>Creativity</h4>
                 </div>
-                <div class="progress" style="--i: 62; --clr: #43f9e1">
-                  <h3>62<span>%</span></h3>
+                <div class="progress" style="--i: 75; --clr: #43f9e1">
+                  <h3>75<span>%</span></h3>
                   <h4>Team Work</h4>
                 </div>
-                <div class="progress less" style="--i: 95; --clr: #a143f9">
-                  <h3>95<span>%</span></h3>
+                <div class="progress " style="--i: 90; --clr: #a143f9">
+                  <h3>90<span>%</span></h3>
                   <h4>Project Management</h4>
                 </div>
-                <div class="progress" style="--i: 78; --clr: #f9bf43">
-                  <h3>78<span>%</span></h3>
+                <div class="progress" style="--i: 85; --clr: #f9bf43">
+                  <h3>85<span>%</span></h3>
                   <h4>Communication</h4>
                 </div>
               </div>

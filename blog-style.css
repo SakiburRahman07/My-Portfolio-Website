@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,400&display=swap');
 
-.blog-body
-{
- 
-	height: 100vh;
-}
 
 
 
@@ -158,14 +153,15 @@
 
     #blogs .titleText{
         font-weight: 600;
-        color: #111;
+        color: #ff05bc;
         font-size: 2rem;
         margin-bottom: 10px;
     }
 
     #blogs .title-text{
-        color: #ffffff;
+        color: #000ad0;
         font-size: 1em;
+        font-weight: 600;
     }
 
     #blogs .about .imgBx{
