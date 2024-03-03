@@ -7,11 +7,12 @@
     $fb = $_POST['fb'];
     $twitter = $_POST['twitter'];
     $youtube = $_POST['youtube'];
+    $image = $_POST['image'];
 
 
 $conn = mysqli_connect("localhost:3307","root","","portfolio") or die("Connection Failed");
 
-$sql = "UPDATE education SET name = '{$name}', title = '{$title}', web = '{$web}', fb = '{$fb}', twitter = '{$twitter}', youtube = '{$youtube}' WHERE education_id = {$education_id}";
+$sql = "UPDATE education SET name = '{$name}', title = '{$title}', web = '{$web}', fb = '{$fb}', twitter = '{$twitter}', youtube = '{$youtube}', image='{$image}' WHERE education_id = {$education_id}";
 $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
 header("Location: http://localhost/my portfolio website 2/crud/education.php");

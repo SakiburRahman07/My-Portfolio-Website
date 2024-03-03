@@ -786,6 +786,7 @@ header{
     border-radius: 50%;
     padding: 3px;
     background: #11235A;
+    align-items: center;
     margin-bottom: 14px;
 }
 
@@ -1252,7 +1253,7 @@ input[type="radio"] {
     z-index: 1;
     margin: 10px;
     border-radius: 50px;
-    background: url(images/about-us-image.jpg);
+    background: url(images/chittagong.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -1261,21 +1262,21 @@ input[type="radio"] {
 
 #gallery-background .img-box:nth-child(2)
 {
-    background: url(images/about-us-image.jpg);
+    background: url(images/sylhet.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #gallery-background .img-box:nth-child(3)
 {
-    background: url(images/about-us-image.jpg);
+    background: url(images/sundarban.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #gallery-background .img-box:nth-child(4)
 {
-    background: url(images/about-us-image.jpg);
+    background: url(images/coxsbazar.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -1488,8 +1489,7 @@ input[type="radio"] {
     background-color: #FFC107;
 }
 .project-body{
-    height: 100vh;
-    
+margin-bottom: 50px;    
 }
 .projects {
     display: flex;
@@ -1520,12 +1520,13 @@ input[type="radio"] {
 }
 
 .project h2 {
-    color: #333;
+    background-color: white;
     margin-bottom: 10px;
+    border: 2px solid #7f4bbb;
 }
 
 .project p {
-    color: #666;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -1566,7 +1567,8 @@ input[type="radio"] {
     left: 0;
     width: 100%;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    background-color: rgba(33, 143, 160, 0.8);
     transform: translateY(100%);
     transition: transform 0.3s;
 }
@@ -1591,7 +1593,7 @@ input[type="radio"] {
 }
 
 .project-links a {
-    color: white;
+    color: green;
     text-decoration: none;
     margin-right: 10px;
 }
@@ -1899,6 +1901,7 @@ h1 {
 .contact-content-con {
     display: flex;
     padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
     .left-contact {
         flex: 2;
         h4 {
@@ -2845,3 +2848,5 @@ body{
     background-color: #088711;
     color: #fff;
   }
+
+  

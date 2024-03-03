@@ -26,6 +26,13 @@
                     <option value="left-container">Left Container</option>
                     <option value="right-container">Right Container</option>
                 </select>
+
+                <div class="form-group bigform">
+                <label>Image :</label>
+                <input type="text" name="image"  />
+            </div>
+
+                
             
             
             <input class="submit" type="submit" value="Save" />

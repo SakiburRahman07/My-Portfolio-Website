@@ -33,6 +33,10 @@
                 <label>Youtube :</label>
                 <input type="text" name="youtube"  />
             </div>
+            <div class="form-group bigform">
+                <label>Image :</label>
+                <input type="text" name="image"  />
+            </div>
             <input class="submit" type="submit" value="Save" />
         </form>
   

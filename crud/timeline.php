@@ -25,6 +25,7 @@
           <th>Time Period</th>
           <th>Description</th>
           <th>Class</th>
+          <th>Image</th>
          
         </tr>
       </thead>
@@ -34,6 +35,7 @@
             $name = $row["date"];
             $description = $row["description"];
             $class = $row["class"];
+            $image = $row['image'];
          
     ?>
     <tbody>
@@ -42,6 +44,7 @@
           <td><?php echo $name ?></td>
           <td><?php echo $description ?></td>
           <td><?php echo $class?></td>
+          <td><?php echo $image?></td>
            
 
          

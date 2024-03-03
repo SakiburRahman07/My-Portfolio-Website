@@ -75,6 +75,11 @@
                 }
                 ?>
             </select>
+
+            <div class="form-group">
+            <label>Image : </label>
+            <input type="text" name="image" value="<?php echo $row['image']; ?>" />
+        </div>
        
         
     <input class="submit" type="submit" value="Update"  />

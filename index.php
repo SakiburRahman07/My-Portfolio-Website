@@ -72,10 +72,7 @@
             </div>
           </div>
           <p id="home-des">
-            I'm a Web Developer, I love to create beautiful and functional
-            websites. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Officia, libero? Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Neque blanditiis sed aut!
+          I'm currently in my third year, pursuing Computer Science and Engineering at Khulna University of Engineering and Technology.
           </p>
           <div class="btn-con">
             <a href="resume.pdf" class="main-btn">
@@ -166,9 +163,11 @@
             </div> -->
            
             <div class="social">
-              <a href=""><i class="fab fa-facebook-f"></i></a>
-              <a href=""><i class="fa-brands fa-twitter"></i></a>
-              <a href=""><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.facebook.com/sakibur.rahman.1020"><i class="fab fa-facebook-f"></i></a>
+              <a href="twitter.com"><i class="fa-brands fa-twitter"></i></a>
+              <a href="instragram.com"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://github.com/SakiburRahman07"><i class="fa-brands fa-github"></i></a>
+              <a href="https://codeforces.com/profile/msr11"><i class="fa-solid fa-code"></i></a>
             </div>
           </div>
 
@@ -199,7 +198,7 @@
                   <div class="card">
                     <div class="content">
                       <div class="img">
-                        <img src="images/kuetLogo.png" alt="" />
+                        <img src="images/<?php echo $rows['image']?>" alt="" />
                       </div>
                       <div class="details">
 
@@ -231,7 +230,7 @@
                   <div class="card">
                     <div class="content">
                       <div class="img">
-                        <img src="images/kuetLogo.png" alt="" />
+                        <img src="images/<?php echo $rows['image']?>" alt="" />
                       </div>
                       <div class="details">
                         <div class="name"> <?php echo $rows['name']; ?></div>
@@ -282,7 +281,7 @@
                    
                     ?>
               <div class="timeline-container <?php echo $row['class']?>" >
-                <img src="images/kuetLogo.png" alt="kuet" />
+                <img src="images/<?php echo $row['image']?>" alt="" />
                 <div class="text-box">
                   <h2><?php echo $row['title'] ?></h2>
                   <small><?php echo $row['date'] ?></small>
@@ -397,8 +396,8 @@
                   <h3>62<span>%</span></h3>
                   <h4>Team Work</h4>
                 </div>
-                <div class="progress less" style="--i: 35; --clr: #a143f9">
-                  <h3>35<span>%</span></h3>
+                <div class="progress less" style="--i: 95; --clr: #a143f9">
+                  <h3>95<span>%</span></h3>
                   <h4>Project Management</h4>
                 </div>
                 <div class="progress" style="--i: 78; --clr: #f9bf43">
@@ -419,10 +418,10 @@
 
             <div class="gallery-container">
               <div class="gallery">
+                <div class="img-box"><h3>CTG</h3></div>
                 <div class="img-box"><h3>Sylhet</h3></div>
-                <div class="img-box"><h3>Sylhet</h3></div>
-                <div class="img-box"><h3>Sylhet</h3></div>
-                <div class="img-box"><h3>Sylhet</h3></div>
+                <div class="img-box"><h3>Sundarban</h3></div>
+                <div class="img-box"><h3>Cox's Bazar</h3></div>
               </div>
             </div>
           </div>
@@ -450,7 +449,7 @@
                 <h3>Merit Scholarship</h3>
                 <p>
                   For securing position among top 3 students among Tangail
-                  District, Secondary School Certificate Examination 2015
+                  District, Secondary School Certificate Examination 2018
                 </p>
                 <!-- <a href="#"><button>learn more</button></a> -->
               </div>
@@ -498,6 +497,12 @@
                 Web Development
               </button>
               <button
+                onclick="filterProjects('android')"
+                class="gradient-bg filter-button"
+              >
+               Android Development
+              </button>
+              <button
                 onclick="filterProjects('cpp')"
                 class="gradient-bg filter-button"
               >
@@ -524,247 +529,154 @@
             </div>
           </div>
 
+          <?php
+                $conn = mysqli_connect("localhost:3307", "root", "", "portfolio") or die("Connection Failed"); 
+                $sql = "SELECT * from project";
+                $result = mysqli_query($conn, $sql) or die("Query Failed");
+                if(mysqli_num_rows($result) >
+            0){ ?>
+
           <div class="projects">
-            <div class="project" data-category="web">
+
+          <?php
+                    while($row = mysqli_fetch_assoc($result)){
+                   
+                    ?>
+
+            <div class="project" data-category="<?php echo $row['category']?>">
               <img
-                src="images/about-us-image.jpg"
+                src="images/<?php echo $row['image']?>"
                 alt="Background Image"
                 class="project-background"
               />
-              <h2>Web Project 1</h2>
+              <h2><?php echo $row['name']?></h2>
 
               <div class="project-content">
-                <p>Description of the project...</p>
+                <p><?php echo $row['description']?></p>
                 <div class="project-links">
-                  <a href="https://github.com"
+                  <a href="<?php echo $row['github']?>"
                     ><i class="fa-brands fa-github"></i
                   ></a>
-                  <a href="https://youtube.com"
-                    ><i class="fa-brands fa-facebook"></i
+                  <a href="<?php echo $row['youtube']?>"
+                    ><i class="fa-brands fa-youtube"></i
                   ></a>
                 </div>
               </div>
             </div>
 
+            <?php }  ?>
+
+         
+
             <!-- Add more projects as needed -->
           </div>
+
+          <?php } ?>
         </div>
       </section>
       <section class="section sec4 blogs" id="blogs">
         <div class="blog-body">
           <header>
             <div class="nav container">
-              <a href="#" class="logo">Code <span>myhobby</span></a>
-              <a href="#" class="login">Sign Up</a>
+              <a  class="logo">SAKIBUR <span>RAHMAN</span></a>
+              <a class="login">SR</a>
             </div>
           </header>
 
           <section class="home" id="home">
             <div class="home-text container">
-              <h2 class="home-title">Trend Blogger</h2>
-              <span class="home-subtitle">Your source of great content</span>
+              <h2 class="home-title">Sakib Sphere</h2>
+              <span class="home-subtitle">Personal Blogging Site</span>
             </div>
           </section>
 
           <section class="about container" id="about">
             <div class="contentBx">
-              <h2 class="titleText">Catch up with the trending topics</h2>
+              <h2 class="titleText">Embark on a Trend-Trek: Navigating Life's Labyrinth of Latest and Greatest on My Personal Blog!</h2>
               <p class="title-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-                eos consequuntur voluptate dolorum totam provident ducimus
-                cupiditate dolore doloribus repellat. Saepe ad fugit similique
-                quis quam. Odio suscipit incidunt distinctio.
-                <br />Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sed blanditiis libero pariatur ipsum suscipit voluptates aut,
-                repellendus quos dolor autem, natus laboriosam consectetur
-                maxime cumque, sunt magni optio? Veritatis, ea?
+              Hello there! I am Md. Sakibur Rahman, currently navigating the exciting landscape of computer science and engineering at Khulna University of Engineering and Technology. My roots trace back to the enchanting town of Tangail, where every corner holds memories of my journey so far. As a student in the realm of computer science and engineering, I find myself constantly drawn to the allure of innovation and problem-solving. Beyond the algorithms and code, I cherish the vibrant tapestry of lifes experiences.
+
+
+                <br />Movies are my escape, a realm where captivating narratives and visuals transport me to different worlds. Music is my constant companion, with the rhythm and melody of favorite songs serving as a backdrop to my daily adventures. Travel is my thrill, a journey of discovery that fuels my curiosity and broadens my perspective. Amidst the whirlwind of activities, I hold a deep appreciation for the people who make life special. Spending quality time with my family and friends is a treasure, grounding me in the warmth of meaningful connections. In essence, I am Md. Sakibur Rahman – not just a student but a passionate explorer of life, from the intricacies of technology to the simple joys of shared moments with loved ones.
               </p>
-              <a href="#" class="btn2">Read more</a>
+              
             </div>
             <div class="imgBx">
-              <img src="images/about.png" alt="" class="fitBg" />
+              <img src="images/about-us-image.jpg" alt="" class="fitBg" />
             </div>
           </section>
 
           <div class="post-filter container">
             <span class="filter-item active-filter" data-filter="all">All</span>
-            <span class="filter-item" data-filter="tech">Tech</span>
-            <span class="filter-item" data-filter="food">Food</span>
-            <span class="filter-item" data-filter="news">News</span>
+            <span class="filter-item" data-filter="dsa">DSA</span>
+            <span class="filter-item" data-filter="android">Android Development</span>
+            <span class="filter-item" data-filter="web">Web Development</span>
           </div>
 
           <div class="post container">
             <!-- Post 1 -->
-            <div class="post-box tech">
-              <img src="images/img1.jpg" alt="" class="post-img" />
+            <div class="post-box dsa">
+              <img src="images/dsa.jpg" alt="" class="post-img" />
               <h2 class="category">Tech</h2>
-              <a href="#" class="post-title"
-                >How to create the best UI with Figma</a
+              <a class="post-title"
+                >Decoding the Symphony of Algorithms: A Dive into the World of Data Structures and Algorithms</a
               >
-              <span class="post-date">12 Feb 2022</span>
+
+              <span class="post-date">12 Feb 2024</span>
               <p class="post-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Consectetur, similique, rerum excepturi harum, vitae facilis
-                corrupti vel modi debitis est perferendis aut quasi ea unde
-                repudiandae iste architecto. Corporis, voluptates.
+                In the intricate dance between computers and data, lies the heart of efficient problem-solving - Data Structures and Algorithms (DSA). As the keystones of computer science, DSA form the backbone of countless applications, from simple search algorithms to complex artificial intelligence. In this blog, we embark on a journey to unravel the elegance and power hidden within the realm of Data Structures and Algorithms.
               </p>
               <div class="profile">
-                <img src="images/testi1.jpg" alt="" class="profile-img" />
-                <span class="profile-name">MKHB</span>
+                <img src="images/hero.jpg" alt="" class="profile-img" />
+                <span class="profile-name">Sakib</span>
               </div>
+
+              <!-- Form with hidden id variable -->
+              <form action="showblog.php" method="POST">
+                <input type="hidden" name="id" value="1">
+                <button type="submit" class="blog-show-button">Read</button>
+              </form>
             </div>
             <!-- Post 2 -->
-            <div class="post-box food">
-              <img src="images/img2.jpg" alt="" class="post-img" />
+            <div class="post-box android">
+              <img src="images/android.jpg" alt="" class="post-img" />
               <h2 class="category">Tech</h2>
-              <a href="#" class="post-title"
-                >How to create the best UI with Figma</a
-              >
-              <span class="post-date">12 Feb 2022</span>
+              <a class="post-title"
+              >All Aboard - Setting Up Android Studio</a>
+              <span class="post-date">7 Feb 2024</span>
               <p class="post-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Consectetur, similique, rerum excepturi harum, vitae facilis
-                corrupti vel modi debitis est perferendis aut quasi ea unde
-                repudiandae iste architecto. Corporis, voluptates.
+              Embark on your Android development adventure by boarding the virtual express known as Android Studio. This chapter is your quick guide to setting up the essential platform that will serve as your digital canvas for crafting innovative mobile applications. Just like getting a ticket for an exciting journey, installing Android Studio marks the beginning of your immersive experience in the dynamic world of app development. So, fasten your seatbelt, as we navigate through the process, ensuring you're ready to unleash your creativity onto the digital landscape. Let the coding odyssey begin!
               </p>
               <div class="profile">
-                <img src="images/testi1.jpg" alt="" class="profile-img" />
-                <span class="profile-name">MKHB</span>
+                <img src="images/hero.jpg" alt="" class="profile-img" />
+                <span class="profile-name">Sakib</span>
               </div>
+              <form action="showblog.php" method="POST">
+                <input type="hidden" name="id" value="2">
+                <button type="submit" class="blog-show-button">Read</button>
+              </form>
             </div>
             <!-- Post 3 -->
-            <div class="post-box food">
-              <img src="images/img3.jpg" alt="" class="post-img" />
+            <div class="post-box web">
+              <img src="images/web.jpg" alt="" class="post-img" />
               <h2 class="category">Food</h2>
               <a href="#" class="post-title"
-                >How to create the best UI with Figma</a
-              >
-              <span class="post-date">12 Feb 2022</span>
+                >Web Development Unveiled: A Quick Dive into Building the Digital Frontier</a>
+              <span class="post-date">11 Nov 2023</span>
               <p class="post-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Consectetur, similique, rerum excepturi harum, vitae facilis
-                corrupti vel modi debitis est perferendis aut quasi ea unde
-                repudiandae iste architecto. Corporis, voluptates.
+              Embark on the exhilarating journey of web development, where the magic of code transforms digital landscapes. Begin by setting up your coding toolkit with essential tools. Dive into the artistry of HTML and CSS, crafting visually appealing web pages. Navigate JavaScript waters to add interactivity and dynamic elements, breathing life into your creations. Explore the world of APIs and data handling to infuse your projects with real-time information. Sail smoothly through testing and debugging, ensuring your web endeavors are free of glitches. As you conclude this quick guide, remember that every click, scroll, and interaction is fueled by lines of code. So, armed with the basics, let curiosity be your compass, and set forth into the exciting realm of web development. Happy coding!
               </p>
               <div class="profile">
-                <img src="images/testi1.jpg" alt="" class="profile-img" />
-                <span class="profile-name">MKHB</span>
+                <img src="images/hero.jpg" alt="" class="profile-img" />
+                <span class="profile-name">Sakib</span>
               </div>
+              <form action="showblog.php" method="POST">
+                <input type="hidden" name="id" value="3">
+                <button type="submit" class="blog-show-button">Read</button>
+              </form>
             </div>
-            <!-- Post 4 -->
-            <div class="post-box news">
-              <img src="images/img4.jpg" alt="" class="post-img" />
-              <h2 class="category">Tech</h2>
-              <a href="#" class="post-title"
-                >How to create the best UI with Figma</a
-              >
-              <span class="post-date">12 Feb 2022</span>
-              <p class="post-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Consectetur, similique, rerum excepturi harum, vitae facilis
-                corrupti vel modi debitis est perferendis aut quasi ea unde
-                repudiandae iste architecto. Corporis, voluptates.
-              </p>
-              <div class="profile">
-                <img src="images/testi1.jpg" alt="" class="profile-img" />
-                <span class="profile-name">MKHB</span>
-              </div>
-            </div>
-            <!-- Post 5 -->
-            <div class="post-box tech">
-              <img src="images/img5.jpg" alt="" class="post-img" />
-              <h2 class="category">Tech</h2>
-              <a href="#" class="post-title"
-                >How to create the best UI with Figma</a
-              >
-              <span class="post-date">12 Feb 2022</span>
-              <p class="post-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Consectetur, similique, rerum excepturi harum, vitae facilis
-                corrupti vel modi debitis est perferendis aut quasi ea unde
-                repudiandae iste architecto. Corporis, voluptates.
-              </p>
-              <div class="profile">
-                <img src="images/testi1.jpg" alt="" class="profile-img" />
-                <span class="profile-name">MKHB</span>
-              </div>
-            </div>
-            <!-- Post 6 -->
-            <div class="post-box news">
-              <img src="images/img4.jpg" alt="" class="post-img" />
-              <h2 class="category">News</h2>
-              <a href="#" class="post-title"
-                >How to create the best UI with Figma</a
-              >
-              <span class="post-date">12 Feb 2022</span>
-              <p class="post-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Consectetur, similique, rerum excepturi harum, vitae facilis
-                corrupti vel modi debitis est perferendis aut quasi ea unde
-                repudiandae iste architecto. Corporis, voluptates.
-              </p>
-              <div class="profile">
-                <img src="images/testi1.jpg" alt="" class="profile-img" />
-                <span class="profile-name">MKHB</span>
-              </div>
-            </div>
-            <!-- Post 7 -->
-            <div class="post-box tech">
-              <img src="images/img7.jpg" alt="" class="post-img" />
-              <h2 class="category">Tech</h2>
-              <a href="#" class="post-title"
-                >How to create the best UI with Figma</a
-              >
-              <span class="post-date">12 Feb 2022</span>
-              <p class="post-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Consectetur, similique, rerum excepturi harum, vitae facilis
-                corrupti vel modi debitis est perferendis aut quasi ea unde
-                repudiandae iste architecto. Corporis, voluptates.
-              </p>
-              <div class="profile">
-                <img src="images/testi1.jpg" alt="" class="profile-img" />
-                <span class="profile-name">MKHB</span>
-              </div>
-            </div>
-            <!-- Post 1 -->
-            <div class="post-box news">
-              <img src="images/img8.jpg" alt="" class="post-img" />
-              <h2 class="category">News</h2>
-              <a href="#" class="post-title"
-                >How to create the best UI with Figma</a
-              >
-              <span class="post-date">12 Feb 2022</span>
-              <p class="post-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Consectetur, similique, rerum excepturi harum, vitae facilis
-                corrupti vel modi debitis est perferendis aut quasi ea unde
-                repudiandae iste architecto. Corporis, voluptates.
-              </p>
-              <div class="profile">
-                <img src="images/testi1.jpg" alt="" class="profile-img" />
-                <span class="profile-name">MKHB</span>
-              </div>
-            </div>
-            <!-- Post 9 -->
-            <div class="post-box food">
-              <img src="images/img10.jpg" alt="" class="post-img" />
-              <h2 class="category">Food</h2>
-              <a href="#" class="post-title"
-                >How to create the best UI with Figma</a
-              >
-              <span class="post-date">12 Feb 2022</span>
-              <p class="post-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Consectetur, similique, rerum excepturi harum, vitae facilis
-                corrupti vel modi debitis est perferendis aut quasi ea unde
-                repudiandae iste architecto. Corporis, voluptates.
-              </p>
-              <div class="profile">
-                <img src="images/testi1.jpg" alt="" class="profile-img" />
-                <span class="profile-name">MKHB</span>
-              </div>
-            </div>
+          
+           
           </div>
 
           <footer>
@@ -772,31 +684,28 @@
               <div class="sec aboutus">
                 <h2>About Us</h2>
                 <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Ducimus quisquam minus quo illo numquam vel incidunt pariatur
-                  hic commodi expedita tempora praesentium at iure fugiat ea,
-                  quam laborum aperiam veritatis.
+                Passionate blogger sharing insights and experiences to inspire and connect with readers on a journey of self-discovery and growth. Welcome to my world of words!
                 </p>
                 <ul class="sci">
                   <li>
-                    <a href="#"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://www.facebook.com/sakibur.rahman.1020"><i class="fa-brands fa-facebook"></i></a>
                   </li>
                   <li>
-                    <a href="#"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://instragram.com"><i class="fa-brands fa-instagram"></i></a>
                   </li>
                   <li>
-                    <a href="#"><i class="bx bxl-twitter"></i></a>
+                    <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
                   </li>
                   <li>
-                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://github.com/SakiburRahman07"><i class="fa-brands fa-github"></i></a>
                   </li>
                 </ul>
               </div>
               <div class="sec quicklinks">
                 <h2>Quick Links</h2>
                 <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
+                  <li><a href="https://youtube.com">YOUTUBE</a></li>
+                  <li><a href="https://kuet.ac.bd">KUET</a></li>
                 </ul>
               </div>
               <div class="sec contactBx">
@@ -805,16 +714,15 @@
                   <li>
                     <span><i class="bx bxs-map"></i></span>
                     <span
-                      >6444 London street <br />
-                      Brighton PA 33445 <br />
-                      Uk</span
+                      >Tangail, Dhaka,  <br />
+                      Bangladesh </span
                     >
                   </li>
                   <li>
                     <span><i class="bx bx-envelope"></i></span>
                     <p>
-                      <a href="mailto:codemyhobby9@gmail.com"
-                        >Codemyhobby9@gmail.com</a
+                      <a href="mailto:rahman2007007@stud.kuet.ac.bd"
+                        >rahman2007007@stud.kuet.ac.bd</a
                       >
                     </p>
                   </li>
@@ -846,8 +754,7 @@
             <div class="left-contact">
               <h4>Contact me here</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
-                laborum numquam? Quam excepturi perspiciatis quas quasi.
+              Passionate and creative individual with a love for learning, exploring diverse interests, and connecting with others through the power of words.
               </p>
               <div class="contact-info">
                 <div class="contact-item">

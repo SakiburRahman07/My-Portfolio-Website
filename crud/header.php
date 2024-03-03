@@ -23,6 +23,9 @@
                 <li>
                     <a href="contact-me.php">Contact</a>
                 </li>
+                <li>
+                    <a href="project.php">Project</a>
+                </li>
                
             </ul>
         </div>

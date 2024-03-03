@@ -73,6 +73,10 @@
             <label>Youtube : </label>
             <input type="text" name="youtube" value="<?php echo $row['youtube']; ?>" />
         </div>
+        <div class="form-group">
+            <label>Image : </label>
+            <input type="text" name="youtube" value="<?php echo $row['image']; ?>" />
+        </div>
         
     <input class="submit" type="submit" value="DELETE"  />
     </form>

@@ -26,6 +26,8 @@ parentContainer.addEventListener('click', event=>{
 })
 
 
+
+
 // //! Scroll Reveal 
 // ScrollReveal({ 
 //     reset: true,

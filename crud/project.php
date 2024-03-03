@@ -1,8 +1,8 @@
 <?php include 'header.php'; ?>
-<?php include 'about-me-menu.php'; ?>
-<?php include 'education-menu.php'; ?>
+<?php include 'project-menu.php'; ?>
+
 <div id="main-content">
-<h2>About me description READ</h2>
+<h2>Project READ</h2>
 
 <?php
      $connection = mysqli_connect('localhost:3307', 'root', '', 'portfolio');
@@ -11,7 +11,7 @@
         die("Connection failed: " . mysqli_connect_error());
     }  
    
-    $show_query = "SELECT * FROM education";
+    $show_query = "SELECT * FROM project";
     $show = mysqli_query($connection, $show_query);
     $count = mysqli_num_rows($show);
     // echo $count;
@@ -21,34 +21,32 @@
     <table>
       <thead>
         <tr>
+          <th>Category</th>
           <th>Name</th>
-          <th>Title</th>
-          <th>Website</th>
-          <th>Facebook</th>
-          <th>Twitter</th>
+          <th>Description</th>
+          <th>Image</th>
+          <th>Github</th>
             <th>Youtube</th>
-            <th>Image</th>
         </tr>
       </thead>
     <?php 
         while($row = mysqli_fetch_assoc($show)){
+            $category = $row["category"];
             $name = $row["name"];
-            $title = $row["title"];
-            $fb = $row["web"];
-            $twitter = $row["fb"];
-            $instra = $row["twitter"];
+            $description = $row["description"];
+            $image = $row["image"];
+            $github = $row["github"];
             $youtube = $row["youtube"];
-            $image = $row['image'];
     ?>
     <tbody>
         <tr>
+          <td><?php echo $category ?></td>
           <td><?php echo $name ?></td>
-          <td><?php echo $title ?></td>
-          <td><?php echo $fb ?></td>
-            <td><?php echo $twitter ?></td>
-            <td><?php echo $instra ?></td>
+          <td><?php echo $description ?></td>
+            <td><?php echo $image ?></td>
+            <td><?php echo $github ?></td>
             <td><?php echo $youtube ?></td>
-            <td><?php echo $image?></td>
+      
 
          
         </tr>
